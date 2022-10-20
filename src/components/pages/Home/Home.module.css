@@ -16,9 +16,9 @@
 
 .homeContainer h1 span {
   color: #ffbb03;
-  padding: 0 0 0.3;
+  padding: 0.3rem;
   background-color: #222;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 .homeContainer p {
