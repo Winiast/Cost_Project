@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import ProjectForm from "../../project/Form/ProjectForm";
 import styles from "./NewProject.module.css";
@@ -6,12 +6,14 @@ import styles from "./NewProject.module.css";
 import axios from "axios";
 
 function NewProject() {
+  const history = useNavigate();
+
   function createPost(project) {
     project.cost = 0;
     project.services = [];
 
     axios.post("http://localhost:3001/projects", project).then((response) => {
-      console.log(response);
+      history("/projects", { message: "Projeto criado com sucesso!" });
     });
   }
   return (

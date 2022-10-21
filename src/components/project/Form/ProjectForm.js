@@ -25,6 +25,16 @@ export default function ProjectForm({ btnText, handleSubmit, projectData }) {
     setProject({ ...project, [e.target.name]: e.target.value });
   }
 
+  function handleCategory(e) {
+    setProject({
+      ...project,
+      category: {
+        id: e.target.value,
+        name: e.target.options[e.target.selectedIndex].text,
+      },
+    });
+  }
+
   useEffect(() => {
     getProjects();
   }, []);
@@ -37,6 +47,7 @@ export default function ProjectForm({ btnText, handleSubmit, projectData }) {
         name="name"
         placeholder="Insira o nome do  projeto"
         handleOnChange={handleOnChange}
+        value={project.name}
       />
       <Input
         type="number"
@@ -44,13 +55,15 @@ export default function ProjectForm({ btnText, handleSubmit, projectData }) {
         text="Orçamento do Projeto"
         name="bugdget"
         handleOnChange={handleOnChange}
+        value={project.budget}
       />
 
       <Select
         name="category_id"
         text="Selecione a categoria"
         options={categories}
-        handleOnChange={handleOnChange}
+        handleOnChange={handleCategory}
+        value={project.category ? project.category.id : ""}
       />
       <SubmitButton text={btnText} />
     </form>
