@@ -1,0 +1,42 @@
+{
+  "projects": [
+    {
+      "name": "test",
+      "id": 1
+    },
+    {
+      "name": "Desenv",
+      "id": 2
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Infra"
+    },
+    {
+      "id": 2,
+      "name": "Dev"
+    },
+    {
+      "id": 3,
+      "name": "Ops"
+    },
+    {
+      "id": 4,
+      "name": "QA"
+    },
+    {
+      "id": 5,
+      "name": "Security"
+    },
+    {
+      "id": 6,
+      "name": "Other"
+    },
+    {
+      "id": 7,
+      "name": "Design"
+    }
+  ]
+}

@@ -9,12 +9,8 @@
   font-weight: 600;
 }
 
-.form_control input {
+.form_control select {
   padding: 0.7em;
   border: none;
   border-radius: 0px;
-}
-
-.form_control input::placeholder {
-  color: #7b7b7b;
 }
