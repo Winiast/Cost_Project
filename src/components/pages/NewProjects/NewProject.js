@@ -13,7 +13,9 @@ function NewProject() {
     project.services = [];
 
     axios.post("http://localhost:3001/projects", project).then((response) => {
-      history("/projects", { message: "Projeto criado com sucesso!" });
+      history("/projects", {
+        state: { message: "Projeto criado com sucesso!" },
+      });
     });
   }
   return (
