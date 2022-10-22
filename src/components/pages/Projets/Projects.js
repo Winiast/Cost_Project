@@ -12,29 +12,38 @@ import Loading from "../../layout/loading/Loading";
 export default function Projects() {
   const location = useLocation();
   let message = "";
+  if (location.state) {
+    message = location.state.message;
+  }
 
   const [projects, setProjects] = useState([]);
   const [removeLoading, setRemoveLoading] = useState(false);
+  const [projectMessage, setProjectMessage] = useState("");
+
   useEffect(() => {
     setTimeout(() => {
       axios.get("http://localhost:3001/projects").then((response) => {
         setProjects(response.data);
         setRemoveLoading(true);
-        console.log(response.data);
       });
-    }, 2000);
+    }, 1000);
   }, []);
 
-  if (location.state) {
-    message = location.state.message;
+  function removeProject(id) {
+    axios.delete(`http://localhost:3001/projects/${id}`).then((response) => {
+      setProjects(projects.filter((project) => project.id !== id));
+      setProjectMessage("Projeto removido com sucesso!");
+    });
   }
+
   return (
     <div className={styles.project_container}>
       <div className={styles.title_container}>
         <h1>Meus Projetos</h1>
         <LinkButton to="/newproject" text="Criar Projeto"></LinkButton>
       </div>
-      {message && <Message type="sucess" msg={message} />}
+      {/* {message && <Message type="sucess" msg={message} />} */}
+      {projectMessage && <Message type="sucess" msg={projectMessage} />}
       <Container customClass={"start"}>
         {projects.length > 0 &&
           projects.map((project) => (
@@ -44,6 +53,7 @@ export default function Projects() {
               budget={project.budget}
               category={project?.category?.name}
               key={project.id}
+              handleRemove={removeProject}
             />
           ))}
         {!removeLoading && <Loading />}

@@ -12,48 +12,15 @@
       "id": 1
     },
     {
-      "name": "IAP Negocios",
-      "budget": "9000",
+      "name": "teste123",
+      "budget": "2222",
       "category": {
-        "id": "5",
-        "name": "Security"
+        "id": "4",
+        "name": "QA"
       },
       "cost": 0,
       "services": [],
       "id": 2
-    },
-    {
-      "name": "Ping Pong",
-      "budget": "100000",
-      "category": {
-        "id": "6",
-        "name": "Other"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 3
-    },
-    {
-      "name": "Tenis de Mesa",
-      "budget": "2000",
-      "category": {
-        "id": "6",
-        "name": "Other"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 4
-    },
-    {
-      "name": "Teste123",
-      "budget": "2932",
-      "category": {
-        "id": "2",
-        "name": "Dev"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 5
     }
   ],
   "categories": [
