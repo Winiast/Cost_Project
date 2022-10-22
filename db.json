@@ -1,97 +1,59 @@
 {
   "projects": [
     {
-      "name": "",
-      "orcament": 0,
-      "category": "",
+      "name": "Mercado Digital",
+      "budget": "12000",
+      "category": {
+        "id": "2",
+        "name": "Dev"
+      },
+      "cost": 0,
+      "services": [],
       "id": 1
     },
     {
-      "name": "",
-      "orcament": 0,
-      "category": "",
+      "name": "IAP Negocios",
+      "budget": "9000",
+      "category": {
+        "id": "5",
+        "name": "Security"
+      },
+      "cost": 0,
+      "services": [],
       "id": 2
     },
     {
-      "name": "",
-      "orcament": 0,
-      "category": "",
+      "name": "Ping Pong",
+      "budget": "100000",
+      "category": {
+        "id": "6",
+        "name": "Other"
+      },
+      "cost": 0,
+      "services": [],
       "id": 3
     },
     {
-      "name": "",
-      "orcament": 0,
-      "category": "",
+      "name": "Tenis de Mesa",
+      "budget": "2000",
+      "category": {
+        "id": "6",
+        "name": "Other"
+      },
+      "cost": 0,
+      "services": [],
       "id": 4
     },
     {
-      "name": "Mercado Digital",
-      "bugdget": "12000",
+      "name": "Teste123",
+      "budget": "2932",
+      "category": {
+        "id": "2",
+        "name": "Dev"
+      },
       "cost": 0,
       "services": [],
       "id": 5
-    },
-    {
-      "name": "SIP Digitl",
-      "bugdget": "23000",
-      "cost": 0,
-      "services": [],
-      "id": 6
-    },
-    {
-      "name": "te",
-      "bugdget": "23000",
-      "cost": 0,
-      "services": [],
-      "category": {
-        "id": "2",
-        "name": "Dev"
-      },
-      "id": 7
-    },
-    {
-      "name": "Gustavo Henrique Ferreira Da Silva",
-      "bugdget": "1200",
-      "category": {
-        "id": "5",
-        "name": "Security"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 8
-    },
-    {
-      "name": "Sip Mob",
-      "bugdget": "9000",
-      "category": {
-        "id": "2",
-        "name": "Dev"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 9
-    },
-    {
-      "name": "Teste123",
-      "bugdget": "2332",
-      "category": {
-        "id": "5",
-        "name": "Security"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 10
-    },
-    {
-      "name": "ZezimProjetos",
-      "bugdget": "9000",
-      "category": {
-        "id": "3",
-        "name": "Ops"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 11
     }
   ],
   "categories": [

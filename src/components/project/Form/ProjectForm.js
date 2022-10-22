@@ -53,7 +53,7 @@ export default function ProjectForm({ btnText, handleSubmit, projectData }) {
         type="number"
         placeholder="Insira o orçamento do projeto"
         text="Orçamento do Projeto"
-        name="bugdget"
+        name="budget"
         handleOnChange={handleOnChange}
         value={project.budget}
       />
