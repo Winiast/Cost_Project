@@ -24,7 +24,7 @@ export default function ProjectCard({
         <span className={`${styles[category]}`}></span> {category}
       </p>
       <div className={styles.project_card_actions}>
-        <Link to={`/projects/${id}`}>
+        <Link to={`/singleProject/${id}`}>
           <BsPencil />
           Editar
         </Link>

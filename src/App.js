@@ -7,6 +7,7 @@ import Navbar from "./components/layout/Navbar/Navbar";
 import Footer from "./components/layout/Footer/Footer";
 import Projects from "./components/pages/Projets/Projects";
 import NewProject from "./components/pages/NewProjects/NewProject";
+import SingleProject from "./components/pages/SingleProject/SingleProject";
 
 function App() {
   return (
@@ -14,11 +15,12 @@ function App() {
       <Navbar />
       <Container customClass="min-heigth">
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/company" element={<Company />} />
-          <Route exact path="/contact" element={<Contact />} />
-          <Route exact path="/projects" element={<Projects />} />
-          <Route exact path="/newproject" element={<NewProject />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/company" element={<Company />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/newproject" element={<NewProject />} />
+          <Route path="/singleProject/:id" element={<SingleProject />} />
         </Routes>
       </Container>
       <Footer />
