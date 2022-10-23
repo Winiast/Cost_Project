@@ -12,6 +12,7 @@
   padding: 0.4rem;
   margin-bottom: 1.3rem;
   font-size: 1.3rem;
+  border-radius: 5px;
 }
 
 .project_card p {

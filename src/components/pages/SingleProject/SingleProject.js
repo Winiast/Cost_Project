@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Loading from "../../layout/loading/Loading";
 import Container from "../../layout/Container/Container";
+import styles from "./SingleProject.module.css";
 
 export default function SingleProject() {
   const { id } = useParams();
@@ -24,15 +25,15 @@ export default function SingleProject() {
   return (
     <>
       {project.name ? (
-        <div>
+        <div className={styles.project_details}>
           <Container customClass="column">
-            <div>
+            <div className={styles.details_container}>
               <h1>Projeto: {project.name}</h1>
-              <button onClick={toggleProjectForm}>
+              <button className={styles.btn} onClick={toggleProjectForm}>
                 {!showProjectForm ? "Editar Projeto" : "Fechar"}
               </button>
               {!showProjectForm ? (
-                <div>
+                <div className={styles.project_info}>
                   <p>
                     <span>Categoria: </span> {project?.category?.name}
                   </p>
@@ -45,7 +46,7 @@ export default function SingleProject() {
                   </p>
                 </div>
               ) : (
-                <div>
+                <div className={styles.project_info}>
                   <p>Detalhes do projeto</p>
                 </div>
               )}
