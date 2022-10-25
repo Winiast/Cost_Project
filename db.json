@@ -24,14 +24,46 @@
     },
     {
       "name": "Alegria Projeto",
-      "budget": "3000",
+      "budget": "100",
       "category": {
         "id": "1",
         "name": "Infra"
       },
       "cost": 0,
-      "services": [],
-      "id": 3
+      "services": [
+        {
+          "name": "Lavacarro",
+          "costs": "250",
+          "descrition": "asda",
+          "id": "b3d29e73-0c9d-4df4-916d-d361db4db41d"
+        },
+        {
+          "name": "sadas",
+          "costs": "11",
+          "descrition": "dasdas",
+          "id": "6925058b-f78b-442b-a468-b4238089c588"
+        },
+        {
+          "name": "adas",
+          "costs": "222",
+          "descrition": "dasdsa",
+          "id": "499a85be-53a2-44d0-a1ad-8819789924c9"
+        },
+        {
+          "name": "casa",
+          "costs": "20",
+          "descrition": "dasdas",
+          "id": "d0fd27b9-941b-453e-99e7-1e5a2ffe6798"
+        },
+        {
+          "name": "asda",
+          "costs": "1111",
+          "descrition": "dasdas",
+          "id": "2006444b-7d9a-4485-90ab-9b22887c0459"
+        }
+      ],
+      "id": 3,
+      "costs": 10
     }
   ],
   "categories": [
