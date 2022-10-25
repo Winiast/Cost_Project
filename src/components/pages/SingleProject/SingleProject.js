@@ -13,6 +13,8 @@ export default function SingleProject() {
 
   const [project, setProject] = useState([]);
   const [showProjectForm, setShowProjectForm] = useState(false);
+  const [showServiceForm, setShowServiceForm] = useState(false);
+
   const [message, setMessage] = useState("");
   const [type, setType] = useState("");
 
@@ -26,8 +28,13 @@ export default function SingleProject() {
     setShowProjectForm(!showProjectForm);
   }
 
+  function toggleServiceForm() {
+    setShowServiceForm(!showServiceForm);
+  }
+
   function editPost(project) {
-    if (project.budget < project.costs) {
+    setMessage("");
+    if (project?.budget < project?.cost) {
       setMessage("O valor do serviço não pode ser maior que o orçamento!");
       setType("error");
       return false;
@@ -75,6 +82,19 @@ export default function SingleProject() {
                 </div>
               )}
             </div>
+            <div className={styles.service_form_container}>
+              <h2>Adicione um Serviço</h2>
+              <button className={styles.btn} onClick={toggleServiceForm}>
+                {!showServiceForm ? "Adicionar serviço" : "Fechar"}
+              </button>
+              <div className={styles.project_info}>
+                {showServiceForm && <h2>Formularios Servicos</h2>}
+              </div>
+            </div>
+            <h2>Serviços</h2>
+            <Container customClass="start">
+              <p>Serviços</p>
+            </Container>
           </Container>
         </div>
       ) : (
