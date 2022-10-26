@@ -31,7 +31,7 @@ export default function ServiceForm({ handleSubmit, btnText, projectData }) {
         <Input
           type="number"
           text="Custo do serviço"
-          name="costs"
+          name="cost"
           placeholder="Insira o valor total"
           handleOnChange={handleChange}
         />

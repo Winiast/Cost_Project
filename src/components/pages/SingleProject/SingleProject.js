@@ -9,6 +9,7 @@ import styles from "./SingleProject.module.css";
 import ProjectForm from "../../project/Form/ProjectForm";
 import Message from "../../project/Mensage/Message";
 import ServiceForm from "../../project/ServiceForm/ServiceForm";
+import ServiceCard from "../../project/ServiceCard/ServiceCard";
 
 export default function SingleProject() {
   const { id } = useParams();
@@ -16,6 +17,7 @@ export default function SingleProject() {
   const [project, setProject] = useState([]);
   const [showProjectForm, setShowProjectForm] = useState(false);
   const [showServiceForm, setShowServiceForm] = useState(false);
+  const [servicesShow, setServicesShow] = useState([]);
 
   const [message, setMessage] = useState("");
   const [type, setType] = useState("");
@@ -23,6 +25,7 @@ export default function SingleProject() {
   useEffect(() => {
     axios.get(`http://localhost:3001/projects/${id}`).then((response) => {
       setProject(response.data);
+      setServicesShow(response.data.services);
     });
   }, [id]);
 
@@ -50,6 +53,12 @@ export default function SingleProject() {
     });
   }
 
+  function removeService(id, cost) {
+    const serviceUpdate = project.filter((service) => service.id !== id);
+
+    const projectUpdate = project;
+  }
+
   function createService(project) {
     const lastService = project.services[project.services.length - 1];
     lastService.id = uuidv4();
@@ -65,7 +74,7 @@ export default function SingleProject() {
       return false;
     }
 
-    project.costs = newCost;
+    project.cost = newCost;
 
     axios.patch(`http://localhost:3001/projects/${id}`, project).then(() => {
       setProject(project);
@@ -126,7 +135,20 @@ export default function SingleProject() {
             </div>
             <h2>Serviços</h2>
             <Container customClass="start">
-              <p>Serviços</p>
+              {servicesShow.length < 1 ? (
+                <p>Não há serviços cadastrados.</p>
+              ) : (
+                servicesShow.map((service) => (
+                  <ServiceCard
+                    id={service.id}
+                    name={service.name}
+                    cost={service?.cost}
+                    description={service.descrition}
+                    handleRemove={removeService}
+                    key={service.id}
+                  />
+                ))
+              )}
             </Container>
           </Container>
         </div>
