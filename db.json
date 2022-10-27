@@ -7,22 +7,27 @@
         "id": "2",
         "name": "Dev"
       },
-      "cost": 12000,
+      "cost": -1778,
       "services": [
         {
-          "name": "Dev Python",
-          "cost": "10000",
-          "descrition": "Trabalhar",
-          "id": "e8cb463b-c981-43c0-84aa-4f43f804126e"
-        },
-        {
-          "name": "Dev PhP",
-          "cost": "2000",
-          "descrition": "Trabalhar",
-          "id": "182bab7b-5201-4e95-a298-9c8fae6681cd"
+          "name": "dasda",
+          "cost": "2222",
+          "descrition": "dasdas",
+          "id": "4dcbe030-7ac4-492b-a44e-2dae9a21ef49"
         }
       ],
       "id": 1
+    },
+    {
+      "name": "Teste123",
+      "budget": "10000",
+      "category": {
+        "id": "2",
+        "name": "Dev"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 2
     }
   ],
   "categories": [

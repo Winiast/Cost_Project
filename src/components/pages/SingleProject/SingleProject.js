@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Loading from "../../layout/loading/Loading";
-import { parse, v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import Container from "../../layout/Container/Container";
 import styles from "./SingleProject.module.css";
 import ProjectForm from "../../project/Form/ProjectForm";
@@ -54,9 +54,26 @@ export default function SingleProject() {
   }
 
   function removeService(id, cost) {
-    const serviceUpdate = project.filter((service) => service.id !== id);
+    const serviceUpdate = project.services.filter(
+      (service) => service.id !== id
+    );
 
     const projectUpdate = project;
+
+    projectUpdate.services = serviceUpdate;
+
+    projectUpdate.cost = project.cost - cost;
+
+    axios
+      .patch(
+        `http://localhost:3001/projects/${projectUpdate.id}`,
+        projectUpdate
+      )
+      .then(() => {
+        setProject(projectUpdate);
+        setMessage("Serviço removido com sucesso!");
+        setType("sucess");
+      });
   }
 
   function createService(project) {
@@ -140,7 +157,7 @@ export default function SingleProject() {
               ) : (
                 servicesShow.map((service) => (
                   <ServiceCard
-                    id={service.id}
+                    id={service?.id}
                     name={service.name}
                     cost={service?.cost}
                     description={service.descrition}
